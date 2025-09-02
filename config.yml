@@ -1,0 +1,9 @@
+title: "Gitansh Vachher"
+tagline: "Experimenting with AI to collapse busywork."
+description: "Sharing what I learn in public."
+url: "https://gitanshvachher.com"
+author: "Gitansh Vachher"
+theme: minima
+twitter_username: gitansh_vachher
+header_pages:
+  - about.md
