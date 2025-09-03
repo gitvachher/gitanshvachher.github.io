@@ -1,0 +1,73 @@
+---
+# This front matter tells Jekyll to compile SCSS → CSS.
+---
+
+@import "minima";
+
+/* ===== Brand base ===== */
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("https://fonts.gstatic.com/s/inter/v13/UcCO3FwrK3iLTeHuS_fvQtMwCp50T4xI.woff2") format("woff2");
+}
+
+:root{
+  --bg: #f9fafb;
+  --text:#111827;
+  --muted:#6b7280;
+  --accent:#2563eb; /* subtle blue */
+  --radius: 14px;
+  --maxw: 800px;
+}
+
+html{font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial, "Noto Sans", sans-serif;}
+body{background:var(--bg); color:var(--text);}
+
+/* Hide Minima’s default big title bar for a cleaner hero */
+.site-header{display:none;}
+.page-content{padding-top:3rem;}
+.site-footer{border:0; color:var(--muted);}
+
+/* Layout */
+.container, .post, .home{
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 24px;
+}
+
+/* Hero */
+.hero h1{
+  font-size: 2rem;
+  line-height: 1.2;
+  margin: 0 0 .5rem 0;
+}
+.hero p{
+  color: var(--muted);
+  margin: 0 0 1.25rem 0;
+}
+
+/* Badge buttons */
+.badges{display:flex; gap:12px; flex-wrap:wrap; margin: 12px 0 24px 0;}
+.badge{
+  display:inline-block; padding:10px 14px; border-radius: var(--radius);
+  border:1px solid rgba(0,0,0,.08); text-decoration:none;
+}
+.badge:hover{border-color: rgba(0,0,0,.16);}
+a{color:var(--accent);}
+
+/* Projects list cards */
+.card{
+  border:1px solid rgba(0,0,0,.08);
+  border-radius: var(--radius);
+  padding:16px 18px; margin:10px 0;
+  background:#fff;
+}
+
+/* Auto dark mode */
+@media (prefers-color-scheme: dark){
+  :root{ --bg:#0b0f14; --text:#e5e7eb; --muted:#9ca3af; --accent:#60a5fa; }
+  .card{ background:#0f141b; border-color:rgba(255,255,255,.08); }
+  a{ color:var(--accent); }
+}
