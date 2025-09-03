@@ -7,4 +7,4 @@ title: "Gitansh Vachher"
 Sharing what I learn in public.
 
 - X: [@gitansh_vachher](https://x.com/gitansh_vachher)
-- LinkedIn: <https://www.linkedin.com/in/gitansh/>
+- LinkedIn: <https://www.linkedin.com/in/gitanshvachher/>
