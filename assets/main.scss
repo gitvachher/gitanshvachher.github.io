@@ -65,6 +65,29 @@ a{color:var(--accent);}
   background:#fff;
 }
 
+/* Now / Work sections */
+.now, .work{
+  margin: 2rem 0;
+}
+.now h2, .work h2{
+  font-size: .95rem;
+  font-weight: 600;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  margin: 0 0 .75rem 0;
+}
+.now ul, .work ul{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.now li, .work li{
+  padding: .4rem 0;
+  color: var(--text);
+  line-height: 1.5;
+}
+
 /* Auto dark mode */
 @media (prefers-color-scheme: dark){
   :root{ --bg:#0b0f14; --text:#e5e7eb; --muted:#9ca3af; --accent:#60a5fa; }
