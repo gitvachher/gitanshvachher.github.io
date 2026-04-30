@@ -1,7 +1,7 @@
 title: "Gitansh Vachher"
-description: "I write about AI, delivery work, and the seam between them."
+description: "Trying to figure out what happens to delivery work when delivery people stop being afraid of the code."
 author: "Gitansh Vachher"
 theme: minima
+permalink: /writing/:slug/
 include:
   - assets
-

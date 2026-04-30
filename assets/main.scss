@@ -1,96 +1,181 @@
 ---
-# This front matter tells Jekyll to compile SCSS → CSS.
+# Compiled by Jekyll from SCSS to CSS.
 ---
 
 @import "minima";
 
-/* ===== Brand base ===== */
-@font-face {
-  font-family: "Inter";
-  font-style: normal;
-  font-weight: 100 900;
-  font-display: swap;
-  src: url("https://fonts.gstatic.com/s/inter/v13/UcCO3FwrK3iLTeHuS_fvQtMwCp50T4xI.woff2") format("woff2");
+/* ===== Reset + base ===== */
+:root {
+  --bg: #fafaf8;
+  --text: #1a1a1a;
+  --muted: #666;
+  --link: #1a1a1a;
+  --rule: rgba(0, 0, 0, 0.12);
+  --maxw: 640px;
 }
 
-:root{
-  --bg: #f9fafb;
-  --text:#111827;
-  --muted:#6b7280;
-  --accent:#2563eb; /* subtle blue */
-  --radius: 14px;
-  --maxw: 800px;
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #111;
+    --text: #e8e8e6;
+    --muted: #9a9a97;
+    --link: #e8e8e6;
+    --rule: rgba(255, 255, 255, 0.14);
+  }
 }
 
-html{font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial, "Noto Sans", sans-serif;}
-body{background:var(--bg); color:var(--text);}
+html, body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Iowan Old Style", "Charter", "Georgia", ui-serif, serif;
+  font-size: 18px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
 
-/* Hide Minima’s default big title bar for a cleaner hero */
-.site-header{display:none;}
-.page-content{padding-top:3rem;}
-.site-footer{border:0; color:var(--muted);}
+/* Hide Minima scaffolding */
+.site-header, .site-footer { display: none; }
+.page-content { padding: 0; }
+.wrapper { max-width: var(--maxw); padding: 0 24px; }
 
-/* Layout */
-.container, .post, .home{
+/* ===== Spine layout ===== */
+.spine {
   max-width: var(--maxw);
   margin: 0 auto;
-  padding: 24px;
+  padding: 14vh 24px 18vh;
 }
 
-/* Hero */
-.hero h1{
-  font-size: 2rem;
-  line-height: 1.2;
-  margin: 0 0 .5rem 0;
-}
-.hero p{
-  color: var(--muted);
-  margin: 0 0 1.25rem 0;
-}
-
-/* Badge buttons */
-.badges{display:flex; gap:12px; flex-wrap:wrap; margin: 12px 0 24px 0;}
-.badge{
-  display:inline-block; padding:10px 14px; border-radius: var(--radius);
-  border:1px solid rgba(0,0,0,.08); text-decoration:none;
-}
-.badge:hover{border-color: rgba(0,0,0,.16);}
-a{color:var(--accent);}
-
-/* Projects list cards */
-.card{
-  border:1px solid rgba(0,0,0,.08);
-  border-radius: var(--radius);
-  padding:16px 18px; margin:10px 0;
-  background:#fff;
-}
-
-/* Now / Work sections */
-.now, .work{
-  margin: 2rem 0;
-}
-.now h2, .work h2{
-  font-size: .95rem;
+.spine h1 {
+  font-size: 1.75rem;
   font-weight: 600;
-  color: var(--muted);
-  text-transform: uppercase;
-  letter-spacing: .08em;
-  margin: 0 0 .75rem 0;
+  letter-spacing: -0.01em;
+  margin: 0 0 0.6rem 0;
 }
-.now ul, .work ul{
+
+.spine .tagline {
+  color: var(--muted);
+  font-size: 1.05rem;
+  line-height: 1.5;
+  margin: 0 0 4rem 0;
+  max-width: 36rem;
+}
+
+.spine section {
+  margin: 3rem 0;
+}
+
+.spine h2 {
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+  margin: 0 0 1rem 0;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.spine .empty {
+  color: var(--muted);
+  font-style: italic;
+  margin: 0;
+}
+
+.spine ul.posts {
   list-style: none;
   padding: 0;
   margin: 0;
 }
-.now li, .work li{
-  padding: .4rem 0;
-  color: var(--text);
-  line-height: 1.5;
+
+.spine ul.posts li {
+  padding: 0.5rem 0;
+  display: flex;
+  gap: 1rem;
+  border-bottom: 1px solid var(--rule);
 }
 
-/* Auto dark mode */
-@media (prefers-color-scheme: dark){
-  :root{ --bg:#0b0f14; --text:#e5e7eb; --muted:#9ca3af; --accent:#60a5fa; }
-  .card{ background:#0f141b; border-color:rgba(255,255,255,.08); }
-  a{ color:var(--accent); }
+.spine ul.posts .date {
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+  font-size: 0.95rem;
+  min-width: 6rem;
+  padding-top: 0.1rem;
+}
+
+.spine ul.posts a {
+  color: var(--text);
+  text-decoration: none;
+}
+
+.spine ul.posts a:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+.spine .contact p {
+  margin: 0;
+}
+
+a {
+  color: var(--link);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+a:hover {
+  text-decoration-thickness: 2px;
+}
+
+/* ===== Post pages ===== */
+.post {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 8vh 24px 16vh;
+}
+
+.post-header {
+  margin-bottom: 3rem;
+}
+
+.post-header h1 {
+  font-size: 1.8rem;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  margin: 0 0 0.5rem 0;
+}
+
+.post-header .meta {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.post-content p {
+  margin: 0 0 1.25rem 0;
+}
+
+.post-content h2 {
+  font-size: 1.25rem;
+  margin: 2.5rem 0 1rem 0;
+}
+
+.post-content blockquote {
+  border-left: 2px solid var(--rule);
+  padding-left: 1rem;
+  margin: 1.5rem 0;
+  color: var(--muted);
+  font-style: italic;
+}
+
+.post-nav {
+  margin-top: 4rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--rule);
+  font-size: 0.95rem;
+}
+
+.post-nav a {
+  color: var(--muted);
 }
