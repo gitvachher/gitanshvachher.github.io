@@ -5,7 +5,6 @@ title: "Gitansh Vachher"
 
 <div class="spine">
   <h1>Gitansh Vachher</h1>
-  <p class="tagline">Engineers ship the code. Sellers sell the dream. I'm in charge of making it real. This is what I notice.</p>
 
   <section class="writing">
     <h2>Writing</h2>
